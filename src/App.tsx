@@ -1,24 +1,19 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Card, {CardVariant} from './components/Card';
+import UserList from './components/UserList';
+import { IUser } from './types/types';
 
 function App() {
+  const users: IUser[] = [
+    {id: 1, name: 'Gonnagetapower', email: 'gonnagetapower@gmail.com', address: {city: 'Moskva', street: 'Lenina', zipcode: '21312'}},
+    {id: 2, name: 'Karpusha', email: 'karpusha201@mail.ru', address: {city: 'Moskva', street: 'Lenina', zipcode: '55552'}}
+  ]
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Card variant={CardVariant.outlined} width='200px' height='400px' >
+        <button>btn</button>
+        </Card>
+        <UserList users={users}/>
     </div>
   );
 }
